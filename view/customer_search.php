@@ -11,6 +11,14 @@
         <input type="submit" value="Search">
     </form>
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    <?php if (isset($customers)) : ?>
+        <h2>Results</h2>
+        <table>
+=======
+>>>>>>> Stashed changes
     <style>
        <style>
         table {
@@ -29,6 +37,10 @@
 
     <table>
         <thead>
+<<<<<<< Updated upstream
+=======
+>>>>>>> new-branch
+>>>>>>> Stashed changes
             <tr>
                 <th>Name</th>
                 <th>Email Address</th>
@@ -50,6 +62,14 @@
                 </tr>
             <?php endforeach; ?>
         </table>
+<<<<<<< Updated upstream
     <?php ?>
+=======
+<<<<<<< HEAD
+    <?php endif; ?>
+=======
+    <?php ?>
+>>>>>>> new-branch
+>>>>>>> Stashed changes
  </main>
 <?php include 'footer.php'; ?>

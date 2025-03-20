@@ -3,6 +3,7 @@
     private static $db;
 
     public static function getDB() {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         $dsn = 'mysql:host=localhost;dbname=tech_support';
     $username = 'root';
@@ -22,6 +23,13 @@
             $username = 'root';
             $password = '';
 
+=======
+        if (!isset(self::$db)) {
+            $dsn = 'mysql:host=your_host;dbname=tech_support';
+            $username = 'root';
+            $password = '';
+
+>>>>>>> Stashed changes
             try {
                 self::$db = new PDO($dsn, $username, $password);
                 self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -32,7 +40,10 @@
             }
         }
         return self::$db;
+<<<<<<< Updated upstream
 >>>>>>> 124034e (first commit)
+=======
+>>>>>>> Stashed changes
     }
 }
 ?>
