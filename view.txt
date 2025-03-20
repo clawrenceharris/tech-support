@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View/Update Customer</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 250px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>SportsPro Technical Support</h1>
+    <p>Sports management software for the sports enthusiast</p>
+    <a href="../index.php">Home</a>
+
+    <h2>View/Update Customer</h2>
+
+    <form action="../controller/index.php" method="post">
+        <input type="hidden" name="action" value="update_customer">
+        <input type="hidden" name="customer_id" value="<?php echo $customer['customerID']; ?>">
+
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="<?php echo htmlspecialchars($customer['firstName']); ?>"><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="<?php echo htmlspecialchars($customer['lastName']); ?>"><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" value="<?php echo htmlspecialchars($customer['address']); ?>"><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" value="<?php echo htmlspecialchars($customer['city']); ?>"><br>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" value="<?php echo htmlspecialchars($customer['state']); ?>"><br>
+
+        <label for="postal_code">Postal Code:</label>
+        <input type="text" id="postal_code" name="postal_code" value="<?php echo htmlspecialchars($customer['postalCode']); ?>"><br>
+
+        <label for="country_code">Country Code:</label>
+        <input type="text" id="country_code" name="country_code" value="<?php echo htmlspecialchars($customer['countryCode']); ?>"><br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($customer['phone']); ?>"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($customer['email']); ?>"><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" value="<?php echo htmlspecialchars($customer['password']); ?>"><br>
+
+        <input type="submit" value="Update Customer">
+    </form>
+
+    <br>
+    <a href="../controller/index.php?action=search_customers">Search Customers</a>
+
+    <p>&copy; 2022 SportsPro, Inc.</p>
+</body>
+</html>
