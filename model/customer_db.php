@@ -1,11 +1,11 @@
 <?php
 
-class Customer {
+class CustomerDB {
     public static function get_customers(){
         $db = Database::getDB();
         $query = 'SELECT * FROM customers';
         $result = $db->query($query);
-        var_dump($result);
+        ($result);
         return $result;
     }
     public static function getCustomersByLastName($last_name) {
@@ -44,6 +44,5 @@ class Customer {
     }
 }
 
-Customer::get_customers()
 ?>
 

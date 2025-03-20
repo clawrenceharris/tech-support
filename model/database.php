@@ -4,7 +4,7 @@
 
     public static function getDB() {
         if (!isset(self::$db)) {
-            $dsn = 'mysql:host=your_host;dbname=tech_support';
+            $dsn = 'mysql:host=localhost;dbname=tech_support';
             $username = 'root';
             $password = '';
 

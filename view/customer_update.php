@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>View/Update Customer</title>
-</head>
-<body>
+<?php
+include("header.php")
+
+?>
+<main>
     <h1>View/Update Customer</h1>
 
     <form method="post" action="index.php">
@@ -24,5 +23,9 @@
 
         <button type="submit">Update Customer</button>
     </form>
-</body>
-</html>
+    <main>
+
+    <?php
+include("footer.php")
+
+?>

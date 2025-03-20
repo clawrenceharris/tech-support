@@ -13,17 +13,17 @@ if ($action == NULL) {
 
 switch ($action) {
     case 'show_search_form':
-        include('../view/customer_search_view.php');
+        include('../view/customer_search.php');
         break;
     case 'search_customers':
         $last_name = filter_input(INPUT_GET, 'last_name');
         $customers = CustomerDB::getCustomersByLastName($last_name);
-        include('../view/customer_search_view.php');
+        include('../view/customer_search.php');
         break;
     case 'view_update_customer':
         $customer_id = filter_input(INPUT_POST, 'customer_id', FILTER_VALIDATE_INT);
         $customer = CustomerDB::getCustomer($customer_id);
-        include('../view/customer_view_update_view.php');
+        include('../view/customer_update.php');
         break;
     case 'update_customer':
         $customer_id = filter_input(INPUT_POST, 'customer_id', FILTER_VALIDATE_INT);
