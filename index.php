@@ -1,15 +1,41 @@
 
+<<<<<<< HEAD
+=======
+
+
+<?php 
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include 'view/header.php'; 
+
+require_once('model/database.php');
+
+?>
+
+
+>>>>>>> 124034e (first commit)
 <main>
     <nav>
         
     <h2>Administrators</h2>
     <ul>
         <li><a href="product_manager">Manage Products</a></li>
+<<<<<<< HEAD
         <li><a href="customer_manager.php">Manage Technicians</a></li>
         <li><a href="under_construction.php">Manage Customers</a></li>
         <li><a href="under_construction.php">Create Incident</a></li>
         <li><a href="under_construction.php">Assign Incident</a></li>
         <li><a href="under_construction.php">Display Incidents</a></li>
+=======
+        <li><a href="under_construction.php">Manage Technicians</a></li>
+        <li><a href="customer_manager">Manage Customers</a></li>
+        <li><a href="under_construction.php">Create Incident</a></li>
+        <li><a href="under_construction.php">Assign Incident</a></li>
+        <li><a href="under_construction.php">Display Incidents</a></li> 
+>>>>>>> 124034e (first commit)
     </ul>
 
     <h2>Technicians</h2>    

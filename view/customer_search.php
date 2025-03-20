@@ -5,26 +5,18 @@
     <h2>Product List</h2>
 
     <style>
+       <style>
         table {
-            width: 80%;
             border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        thead {
-            background-color: #f2f2f2;
+            width: 50%;
         }
 
         th, td {
-            padding: 10px;
+            border: 1px solid black;
+            padding: 8px;
             text-align: left;
-            border-bottom: 1px solid #ddd;
         }
-
-        th {
-            border-bottom: 2px solid #ddd;
-        }
-
+    </style>
        
     </style>
 
