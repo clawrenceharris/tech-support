@@ -1,8 +1,15 @@
 
 <?php include 'header.php'; ?>
 
+
 <main>
-    <h2>Product List</h2>
+    <h2>Customer Search</h2>
+    <form action="index.php" method="get">
+        <input type="hidden" name="action" value="search_customers">
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name">
+        <input type="submit" value="Search">
+    </form>
 
     <style>
        <style>
@@ -18,38 +25,30 @@
         }
     </style>
        
-    </style>
 
     <table>
         <thead>
             <tr>
-                <th>Code</th>
                 <th>Name</th>
-                <th>Version</th>
-                <th>Release Date</th>
+                <th>Email Address</th>
+                <th>City</th>
                 <th>&nbsp;</th>
             </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($products as $product) : ?>
+            <?php foreach ($customers as $customer) : ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($product['productCode']); ?></td>
-                    <td><?php echo htmlspecialchars($product['name']); ?></td>
-                    <td><?php echo htmlspecialchars($product['version']); ?></td>
-                    <td><?php echo htmlspecialchars($product['releaseDate']); ?></td>
+                    <td><?php echo htmlspecialchars($customer['firstName'] . ' ' . $customer['lastName']); ?></td>
+                    <td><?php echo htmlspecialchars($customer['email']); ?></td>
+                    <td><?php echo htmlspecialchars($customer['city']); ?></td>
                     <td>
-                        <form action="." method="post">
-                            <input type="hidden" name="action" value="delete_product">
-                            <input type="hidden" name="productCode" value="<?php echo htmlspecialchars($product['productCode']); ?>">
-                            <button type="submit" class="button-delete">Delete</button>
+                        <form action="index.php" method="post">
+                            <input type="hidden" name="action" value="view_update_customer">
+                            <input type="hidden" name="customer_id" value="<?php echo $customer['customerID']; ?>">
+                            <input type="submit" value="Select">
                         </form>
                     </td>
                 </tr>
             <?php endforeach; ?>
-        </tbody>
-    </table>
-
-    <a href=".?action=show_add_form">Add Product</a>
-</main>
-
+        </table>
+    <?php ?>
+ </main>
 <?php include 'footer.php'; ?>
