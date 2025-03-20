@@ -1,18 +1,4 @@
 <?php
-<<<<<<< HEAD
-// require('../model/product_db.php');
-
-$action = filter_input(INPUT_POST, 'action');
-if ($action === NULL) {
-    $action = filter_input(INPUT_GET, 'action');
-    if ($action === NULL) {
-        $action = 'under_construction';
-    }
-}
-
-if ($action == 'under_construction') {
-    include('../under_construction.php');
-=======
 require_once('../model/database.php');
 require_once('../model/product_db.php');
 
@@ -22,9 +8,7 @@ if ($action == NULL) {
     if ($action == NULL) {
         $action = 'list_products';
     }
-}
-
-switch ($action) {
+}switch ($action) {
     case 'list_products':
         $products = ProductDB::getProducts();
         include('../view/product_list.php');
@@ -34,6 +18,17 @@ switch ($action) {
         ProductDB::deleteProduct($productCode);
         header('Location: .');
         break;
->>>>>>> 124034e (first commit)
+    case 'show_add_form':
+        include('../view/add_product.php');
+        break;
+    case 'add_product':
+        $productCode = filter_input(INPUT_POST, 'productCode');
+        $name = filter_input(INPUT_POST, 'name');
+        $version = filter_input(INPUT_POST, 'version');
+        $releaseDate = filter_input(INPUT_POST, 'releaseDate');
+
+        ProductDB::addProduct($productCode, $name, $version, $releaseDate);
+        header('Location: .');
+        break;
 }
 ?>

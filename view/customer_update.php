@@ -1,6 +1,5 @@
 <?php
-include("header.php")
-reuqire()
+include 'header.php'
 ?>
 <main>
     <h1>View/Update Customer</h1>
@@ -26,6 +25,6 @@ reuqire()
     <main>
 
     <?php
-include("footer.php")
+include 'footer.php';
 
 ?>

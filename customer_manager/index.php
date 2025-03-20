@@ -13,7 +13,7 @@ require_once('../model/customer_db.php');
 
 switch ($action) {
     case 'show_search_form':
-    include('../view/customer_search_view.php');
+    include('../view/customer_search.php');
     break;
 
     case 'search_customers':

@@ -18,5 +18,17 @@ class ProductDB {
         $statement->execute();
         $statement->closeCursor();
     }
+
+    public static function addProduct($productCode, $name, $version, $releaseDate) {
+        $db = Database::getDB();
+        $query = 'INSERT INTO products (productCode, name, version, releaseDate) VALUES (:productCode, :name, :version, :releaseDate)';
+        $statement = $db->prepare($query);
+        $statement->bindValue(':productCode', $productCode);
+        $statement->bindValue(':name', $name);
+        $statement->bindValue(':version', $version);
+        $statement->bindValue(':releaseDate', $releaseDate);
+        $statement->execute();
+        $statement->closeCursor();
+    }
 }
 ?>
