@@ -30,21 +30,26 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($products as $product) : ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($product['productCode']); ?></td>
-                    <td><?php echo htmlspecialchars($product['name']); ?></td>
-                    <td><?php echo htmlspecialchars($product['version']); ?></td>
-                    <td><?php echo htmlspecialchars($product['releaseDate']); ?></td>
-                    <td>
-                        <form action="." method="post">
-                            <input type="hidden" name="action" value="delete_product">
-                            <input type="hidden" name="productCode" value="<?php echo htmlspecialchars($product['productCode']); ?>">
-                            <button type="submit" class="button-delete">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
+        <?php foreach ($products as $product) : ?>
+    <tr>
+        <td><?php echo htmlspecialchars($product['productCode']); ?></td>
+        <td><?php echo htmlspecialchars($product['name']); ?></td>
+        <td><?php echo htmlspecialchars($product['version']); ?></td>
+        <td>
+            <?php
+            $date = new DateTime($product['releaseDate']);
+            echo $date->format('n-j-Y'); 
+            ?>
+        </td>
+        <td>
+            <form action="." method="post">
+                <input type="hidden" name="action" value="delete_product">
+                <input type="hidden" name="productCode" value="<?php echo htmlspecialchars($product['productCode']); ?>">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+<?php endforeach; ?>
         </tbody>
     </table>
 

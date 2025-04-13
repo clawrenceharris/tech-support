@@ -1,3 +1,7 @@
+<?php
+include("header.php")
+?>
+
 <main>
     <h1>SportsPro Technical Support</h1>
     <a href="../index.php">Home</a>
@@ -15,8 +19,11 @@
         <input type="text" name="version" id="version"><br><br>
 
         <label for="releaseDate">Release Date:</label>
-        <input type="datetime-local" name="releaseDate" id="releaseDate"><br><br>
-
+        <input type="text" name="releaseDate" id="releaseDate"><br><br>
+       
         <button type="submit">Add Product</button>
     </form>
 </main>
+<?php
+include("footer.php")
+?>

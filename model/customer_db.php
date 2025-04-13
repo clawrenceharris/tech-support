@@ -13,7 +13,16 @@ class CustomerDB
         $statement->closeCursor();
         return $customers;
     }
-
+    public static function getCustomerByEmail($email) {
+        $db = Database::getDB();
+        $query = 'SELECT * FROM customers WHERE email = :email';
+        $statement = $db->prepare($query);
+        $statement->bindValue(':email', $email);
+        $statement->execute();
+        $customer = $statement->fetch(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+        return $customer;
+    }
     public static function getCustomer($customer_id)
     {
         $db = Database::getDB();
@@ -28,6 +37,7 @@ class CustomerDB
 
     public static function updateCustomer($customer_id, $first_name, $last_name, $address, $city, $state, $postal_code, $country_code, $phone, $email, $password)
     {
+
         $db = Database::getDB();
         $query = "UPDATE customers
                   SET firstName = :first_name,
@@ -66,5 +76,7 @@ class CustomerDB
         $statement->closeCursor();
         return $countries;
     }
+
+
 }
 ?>

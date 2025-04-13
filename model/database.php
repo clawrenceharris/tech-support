@@ -4,8 +4,8 @@
 
     public static function getDB() {
         $dsn = 'mysql:host=localhost;dbname=tech_support';
-    $username = 'root';
-    $password = '';
+        $username = 'root';
+        $password = '';
 
     try {
         $db = new PDO($dsn, $username, $password);

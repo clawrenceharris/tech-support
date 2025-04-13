@@ -4,7 +4,7 @@
 <head>
     <title>SportsPro Technical Support</title>
     <link rel="stylesheet" type="text/css"
-          href="/project_start/tech_support/main.css">
+          href="../main.css">
 </head>
 
 <body>

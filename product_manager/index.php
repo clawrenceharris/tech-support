@@ -8,7 +8,9 @@ if ($action == NULL) {
     if ($action == NULL) {
         $action = 'list_products';
     }
-}switch ($action) {
+}
+
+switch ($action) {
     case 'list_products':
         $products = ProductDB::getProducts();
         include('../view/product_list.php');
@@ -21,14 +23,23 @@ if ($action == NULL) {
     case 'show_add_form':
         include('../view/add_product.php');
         break;
-    case 'add_product':
-        $productCode = filter_input(INPUT_POST, 'productCode');
-        $name = filter_input(INPUT_POST, 'name');
-        $version = filter_input(INPUT_POST, 'version');
-        $releaseDate = filter_input(INPUT_POST, 'releaseDate');
-
-        ProductDB::addProduct($productCode, $name, $version, $releaseDate);
-        header('Location: .');
-        break;
+        case 'add_product':
+            $productCode = filter_input(INPUT_POST, 'productCode');
+            $name = filter_input(INPUT_POST, 'name');
+            $version = filter_input(INPUT_POST, 'version');
+            $releaseDateInput = filter_input(INPUT_POST, 'releaseDate');
+        
+            try {
+                $date = new DateTime($releaseDateInput);
+                $releaseDateFormatted = $date->format('Y-m-d');
+            } catch (Exception $e) {
+                $error_message = "Invalid date. Please use a valid date format.";
+                include('../errors/error.php');
+                exit();
+            }
+        
+            ProductDB::addProduct($productCode, $name, $version, $releaseDateFormatted);
+            header('Location: .');
+            break;
 }
 ?>
