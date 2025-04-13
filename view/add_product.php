@@ -3,8 +3,7 @@ include("header.php")
 ?>
 
 <main>
-    <h1>SportsPro Technical Support</h1>
-    <a href="../index.php">Home</a>
+   
     <h2>Add Product</h2>
     <form action="." method="post">
         <input type="hidden" name="action" value="add_product">

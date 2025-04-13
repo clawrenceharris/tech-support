@@ -3,22 +3,6 @@
 <main>
     <h2>Product List</h2>
 
-    <style>
-       <style>
-        table {
-            border-collapse: collapse;
-            width: 50%;
-        }
-
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
-       
-    </style>
-
     <table>
         <thead>
             <tr>
@@ -52,7 +36,7 @@
 <?php endforeach; ?>
         </tbody>
     </table>
-
+    <br>
     <a href=".?action=show_add_form">Add Product</a>
 </main>
 

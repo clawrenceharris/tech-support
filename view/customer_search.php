@@ -10,20 +10,6 @@
         <input type="text" name="last_name" id="last_name">
         <input type="submit" value="Search">
     </form>
-
-    <style>
-       <style>
-        table {
-            border-collapse: collapse;
-            width: 50%;
-        }
-
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
        
 
     <table>
