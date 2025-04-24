@@ -30,6 +30,14 @@
                 <input type="hidden" name="action" value="delete_product">
                 <input type="hidden" name="productCode" value="<?php echo htmlspecialchars($product['productCode']); ?>">
                 <button type="submit">Delete</button>
+               
+
+            </form>
+            <form action="." method="post">
+
+            <input type="hidden" name="action" value="show_update_form">
+                <input type="hidden" name="productCode" value="<?php echo htmlspecialchars($product['productCode']); ?>">
+                <button type="submit">Update</button>
             </form>
         </td>
     </tr>
